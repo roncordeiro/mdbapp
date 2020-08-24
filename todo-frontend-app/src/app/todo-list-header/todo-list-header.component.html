@@ -1,0 +1,12 @@
+<h4 class="card-title">Lista de Atividades</h4>
+<div class="add-items d-flex">
+  <input type="text" class="form-control todo-list-input" placeholder="O que preciso fazer hoje?" autofocus=""
+         [(ngModel)]="newTodo.title"
+         (keyup.enter)="addTodo()">
+
+  <input type="text" placeholder="Datepicker" [(ngModel)]="newTodo.dueDate" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true , dateInputFormat: 'DD-MM-YYYY'}">
+
+  <button class="add btn btn-primary font-weight-bold todo-list-add-btn" (click)="addTodo()">Add</button>
+</div>
+
+

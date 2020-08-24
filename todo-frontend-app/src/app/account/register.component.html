@@ -1,0 +1,171 @@
+﻿<div class="card">
+    <h4 class="card-header">Cadastre-se!</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstName">Nome</label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">Nome é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Sobrenome</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Sobrenome é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <select id="sexo" formControlName="sexo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sexo.errors }">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outros">Outros</option>
+                </select>                
+                <div *ngIf="submitted && f.sexo.errors" class="invalid-feedback">
+                    <div *ngIf="f.sexo.errors.required">Sexo é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Usuário é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Senha é obrigatório</div>
+                    <div *ngIf="f.password.errors.minlength">Senha deve ter no mínimo 6 caracteres</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">Data de nascimento</label>
+                <input type="date" formControlName="nasc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nasc.errors }" /> 
+                <div *ngIf="submitted && f.nasc.errors" class="invalid-feedback">
+                    <div *ngIf="f.nasc.errors.required">Data de nascimento é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuEleitor">Título de Eleitor</label>
+                <input type="text" formControlName="nuEleitor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuEleitor.errors }" />
+                <div *ngIf="submitted && f.nuEleitor.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuEleitor.errors.required">Título de Eleitor é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuZona">Zona Eleitoral</label>
+                <input type="text" formControlName="nuZona" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuZona.errors }" />
+                <div *ngIf="submitted && f.nuZona.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuZona.errors.required">Zona eleitoral é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuSecao">Seção Eleitoral</label>
+                <input type="text" formControlName="nuSecao" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuSecao.errors }" />
+                <div *ngIf="submitted && f.nuSecao.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuSecao.errors.required">Seção eleitoral é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuRg">RG</label>
+                <input type="text" formControlName="nuRg" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuRg.errors }" />
+                <div *ngIf="submitted && f.nuRg.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuRg.errors.required">RG é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuCpf">CPF</label>
+                <input type="text" formControlName="nuCpf" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuCpf.errors }" />
+                <div *ngIf="submitted && f.nuCpf.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuCpf.errors.required">CPF é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuMunicipio">Município</label>
+                <input type="text" formControlName="nuMunicipio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuMunicipio.errors }" />
+                <div *ngIf="submitted && f.nuMunicipio.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuMunicipio.errors.required">Município é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuUf">UF</label>
+                <input type="text" formControlName="nuUf" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuUf.errors }" />
+                <div *ngIf="submitted && f.nuUf.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuUf.errors.required">UF é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nomeMae">Nome da Mãe</label>
+                <input type="text" formControlName="nomeMae" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nomeMae.errors }" />
+                <div *ngIf="submitted && f.nomeMae.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuUf.errors.required">Nome da Mãe é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="profissao">Profissão</label>
+                <input type="text" formControlName="profissao" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profissao.errors }" />
+                <div *ngIf="submitted && f.profissao.errors" class="invalid-feedback">
+                    <div *ngIf="f.profissao.errors.required">Profissão é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuCep">CEP</label>
+                <input type="text" formControlName="nuCep" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuCep.errors }" />
+                <div *ngIf="submitted && f.nuCep.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuCep.errors.required">CEP é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" formControlName="endereco" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endereco.errors }" />
+                <div *ngIf="submitted && f.endereco.errors" class="invalid-feedback">
+                    <div *ngIf="f.endereco.errors.required">Endereço é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">E-mail é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nuCelular">Celular com DDD</label>
+                <input type="text" formControlName="nuCelular" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nuCelular.errors }" />
+                <div *ngIf="submitted && f.nuCelular.errors" class="invalid-feedback">
+                    <div *ngIf="f.nuCelular.errors.required">Celular é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="escolaridade">Escolaridade</label>
+                <input type="text" formControlName="escolaridade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.escolaridade.errors }" />
+                <div *ngIf="submitted && f.escolaridade.errors" class="invalid-feedback">
+                    <div *ngIf="f.escolaridade.errors.required">Escolaridade é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estadoCivil">Estado Civil</label>
+                <select id="estadoCivil" formControlName="estadoCivil" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.estadoCivil.errors }">
+                    <option value="Solteiro">Solteiro(a)</option>
+                    <option value="Casado">Casado(a)</option>
+                    <option value="Divorciado">Divorciado(a)</option>
+                    <option value="Viuvo" selected>Viúvo(a)</option>
+                </select>                
+                <div *ngIf="submitted && f.estadoCivil.errors" class="invalid-feedback">
+                    <div *ngIf="f.estadoCivil.errors.required">Estado Civil é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Cadastrar
+                </button>
+                <a routerLink="../login" class="btn btn-link">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
